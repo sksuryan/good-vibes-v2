@@ -1,7 +1,6 @@
 import { useRef } from "react";
 import styles from "../../styles/PostCarousel.module.scss";
 import Post from "../Post";
-import Twemoji from "../Twemoji";
 
 const PostCarousel = () => {
   const containerRef = useRef(null);

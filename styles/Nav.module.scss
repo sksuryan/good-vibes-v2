@@ -17,7 +17,8 @@
   background-color: white;
   box-shadow: 2px 2px 4px 0 rgba(51, 51, 51, 0.342);
 
-  border-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 
   h1 {
     display: flex;
@@ -45,14 +46,16 @@
       font-size: 0.875rem;
       font-weight: 600;
 
-      border-color: $blue;
-      color: $blue;
+      border-color: $red;
+      color: $red;
 
       padding: 0.5rem;
 
-      & div {
-        width: 1.8rem;
-        height: 1.8rem;
+      &:last-of-type {
+        border-color: $gray;
+        color: $gray;
+
+        margin-left: 0.75rem;
       }
 
       @media screen and (max-width: 550px) {

@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cookie": "^0.4.1",
     "next": "^10.2.2",
     "next-images": "^1.7.0",
     "react": "^17.0.2",
