@@ -81,11 +81,11 @@
       color: $blue;
       border-color: $blue;
 
+      margin: 0 0.5rem;
+
       &:last-of-type {
         color: $red;
         border-color: $red;
-
-        margin-left: 0.5rem;
       }
     }
   }
