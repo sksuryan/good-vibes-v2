@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Link from "next/link";
+
 import styles from "../../styles/Nav.module.scss";
 import Twemoji from "../Twemoji";
 
@@ -13,9 +14,11 @@ const Nav = () => {
         <button>
           <Twemoji emoji="❤" /> <p>Contribute</p>
         </button>
-        <button>
-          <Twemoji emoji="⚙" /> <p>Settings</p>
-        </button>
+        <Link href="/profile">
+          <button>
+            <Twemoji emoji="😇" /> <p>Profile</p>
+          </button>
+        </Link>
       </div>
     </div>
   );
