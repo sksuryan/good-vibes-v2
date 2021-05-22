@@ -77,3 +77,20 @@ a {
   align-items: center;
   justify-content: center;
 }
+
+.arrow {
+  position: absolute;
+
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 0.75rem;
+}
+
+.right {
+  transform: translate(-75%, -50%) rotate(-45deg);
+}
+
+.left {
+  transform: translate(-25%, -50%) rotate(135deg);
+}
