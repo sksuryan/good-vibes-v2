@@ -1,0 +1,7 @@
+@import "./animations.scss";
+
+.container {
+  animation: fadein ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
