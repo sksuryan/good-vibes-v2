@@ -17,8 +17,11 @@
   @media screen and (max-width: 550px) {
     display: grid;
     grid-auto-flow: row;
+    height: max-content;
 
     padding: 1rem 0;
+
+    overflow-y: visible;
   }
 
   &::-webkit-scrollbar {
@@ -35,6 +38,11 @@
   height: 100%;
 
   position: relative;
+
+  @media screen and (max-width: 550px) {
+    height: max-content;
+    overflow-y: visible;
+  }
 
   button {
     position: absolute;
