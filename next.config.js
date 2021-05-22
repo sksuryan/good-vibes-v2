@@ -12,6 +12,11 @@ module.exports = withImages({
     return config;
   },
   images: {
-    domains: ["twemoji.maxcdn.com", "img.icons8.com"],
+    domains: [
+      "twemoji.maxcdn.com",
+      "img.icons8.com",
+      "i.imgflip.com",
+      "i.pinimg.com",
+    ],
   },
 });

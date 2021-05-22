@@ -1,13 +1,18 @@
+import Head from "next/head";
 import Nav from "../components/Nav";
+import PostCarousel from "../components/PostCarousel";
 
 const Posts = () => {
   return (
-    <div>
-      <Nav />
-      <div>
-        <div></div>
-      </div>
-    </div>
+    <>
+      <Head>
+        <title>💕 Good Vibes | Posts</title>
+      </Head>
+      <>
+        <Nav />
+        <PostCarousel />
+      </>
+    </>
   );
 };
 

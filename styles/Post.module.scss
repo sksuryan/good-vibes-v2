@@ -1,0 +1,70 @@
+.container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  scroll-snap-align: center;
+
+  & > div {
+    width: 500px;
+
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+    border-radius: 2rem;
+
+    padding: 2rem;
+    background-color: white;
+
+    box-sizing: content-box;
+
+    .image {
+      width: 100%;
+      height: auto;
+
+      overflow: hidden;
+
+      div {
+        width: 100%;
+
+        border-radius: 1rem;
+      }
+    }
+
+    p {
+      margin-top: 2rem;
+      text-align: justify;
+
+      font-weight: 400;
+
+      max-width: 100%;
+
+      &:last-of-type {
+        text-align: end;
+        font-weight: 600;
+
+        margin-bottom: 0;
+        margin-top: 1rem;
+        margin-right: 0.5rem;
+      }
+    }
+
+    @media screen and (max-width: 800px) {
+      width: 400px;
+    }
+
+    @media screen and (max-width: 550px) {
+      width: 100%;
+
+      padding: 1.25rem;
+      margin: 1.25rem 1rem;
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    width: 100%;
+
+    scroll-snap-align: initial;
+  }
+}
