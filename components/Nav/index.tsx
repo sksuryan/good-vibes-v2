@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styles from "../../styles/Nav.module.scss";
 import Twemoji from "../Twemoji";
 
@@ -8,16 +9,16 @@ const Nav = () => (
       Good Vibes
     </h1>
     <div>
-      <a href="#">
+      <a>
         <button>
-          <Twemoji emoji="👋" />
-          login
-        </button>
-      </a>
-      <a href="#">
-        <button>
-          <Twemoji emoji="❤" />
-          register
+          <div className="emoji">
+            <Image
+              src="https://img.icons8.com/bubbles/50/000000/google-logo.png"
+              height="50"
+              width="50"
+            />
+          </div>{" "}
+          <p>Sign in with Google</p>
         </button>
       </a>
     </div>

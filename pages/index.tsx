@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import Twemoji from "../components/Twemoji";
 
 import styles from "../styles/Home.module.scss";
@@ -18,12 +19,14 @@ const App = () => (
       <div className={styles.buttonContainer}>
         <a>
           <button>
-            <Twemoji emoji="👋" /> login
-          </button>
-        </a>
-        <a>
-          <button>
-            <Twemoji emoji="❤" /> register
+            <div className="emoji">
+              <Image
+                src="https://img.icons8.com/bubbles/50/000000/google-logo.png"
+                height="50"
+                width="50"
+              />
+            </div>{" "}
+            Continue with Google
           </button>
         </a>
       </div>

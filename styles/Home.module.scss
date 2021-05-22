@@ -68,25 +68,14 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 
-    a:last-of-type {
-      button {
-        color: $red;
-        border-color: $red;
-      }
-    }
-
     button {
-      border-color: $green;
-      color: $green;
+      border-color: $blue;
+      color: $blue;
     }
 
-    & > :first-child {
-      margin-right: 0.75rem;
-    }
-
-    & > :last-child {
-      color: $red;
-      border-color: $red;
+    & div {
+      height: 32px;
+      width: 32px;
     }
   }
 
@@ -102,15 +91,6 @@
 
     p {
       font-size: 1rem;
-    }
-
-    .buttonContainer {
-      flex-direction: column;
-
-      & > :first-child {
-        margin-right: 0;
-        margin-bottom: 0.75rem;
-      }
     }
   }
 
