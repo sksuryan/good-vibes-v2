@@ -5,7 +5,7 @@ import { GetServerSideProps } from "next";
 import Nav from "../components/Nav";
 import PostCarousel from "../components/PostCarousel";
 
-const Posts = () => {
+const Posts = ({ props }) => {
   return (
     <>
       <Head>
@@ -31,8 +31,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         permanent: true,
       },
     };
+  } else {
+    const res = await fetch("https://good-vibes-okay.herokuapp.com/posts");
+    const data = await res.json();
+    return { props: { posts: data?.posts || null } };
   }
-  return { props: {} };
 };
 
 export default Posts;

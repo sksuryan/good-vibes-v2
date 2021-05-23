@@ -1,7 +1,10 @@
+import Cookie from "cookie";
+import { GetServerSideProps } from "next";
 import { NextRouter, useRouter } from "next/dist/client/router";
 import Head from "next/head";
 import Image from "next/image";
 import Twemoji from "../components/Twemoji";
+import { useUserDetails } from "../components/UserContext";
 
 import styles from "../styles/Home.module.scss";
 
@@ -34,6 +37,7 @@ const onClick = (router: NextRouter) => {
 
 const App = () => {
   const router = useRouter();
+  const user = useUserDetails();
 
   return (
     <>
@@ -48,20 +52,48 @@ const App = () => {
         </h1>
         <p>Spreading positivity 10 posts at a time</p>
         <div className={styles.buttonContainer}>
-          <button onClick={() => onClick(router)}>
-            <div className="emoji">
-              <Image
-                src="https://img.icons8.com/bubbles/50/000000/google-logo.png"
-                height="50"
-                width="50"
-              />
-            </div>{" "}
-            Continue with Google
-          </button>
+          {user ? (
+            <button onClick={() => onClick(router)}>
+              <Twemoji emoji={"✨"} />
+              Continue
+            </button>
+          ) : (
+            <button onClick={() => onClick(router)}>
+              <div className="emoji">
+                <Image
+                  src="https://img.icons8.com/bubbles/50/000000/google-logo.png"
+                  height="50"
+                  width="50"
+                />
+              </div>{" "}
+              Continue with Google
+            </button>
+          )}
         </div>
       </div>
     </>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const token = context.req.headers.cookie
+    ? Cookie.parse(context.req.headers.cookie).token
+    : null;
+
+  if (token) {
+    return {
+      redirect: {
+        destination: "/posts",
+        permanent: true,
+      },
+    };
+  }
+
+  return {
+    props: {
+      user: true,
+    },
+  };
 };
 
 export default App;

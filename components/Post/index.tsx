@@ -1,22 +1,17 @@
 import Image from "next/image";
 import styles from "../../styles/Post.module.scss";
 
-const Post = () => {
+const Post = ({ url, text }) => {
   return (
     <div className={styles.container}>
       <div>
-        <div className={styles.image}>
-          <Image
-            src="https://i.imgflip.com/2ybaqz.jpg"
-            width="800"
-            height="800"
-          />
-        </div>
-        <p>
-          Life maybe hard, but we can get through this. It's okay if it's not
-          okay.
-        </p>
-        <p>@rvers</p>
+        {url && (
+          <div className={styles.image}>
+            <img src={url}></img>
+          </div>
+        )}
+        <p>{text}</p>
+        <p>a kinderd soul</p>
       </div>
     </div>
   );
